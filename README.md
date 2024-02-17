@@ -4,6 +4,7 @@ Example:
 Enter the number to calculate gamma: 4.2
 
 Calculate Factorials of: 4.2
+
 The Gamma-Factorial of the Decimal is: 32.5781
 
 --------------------------------
