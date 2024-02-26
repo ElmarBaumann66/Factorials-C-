@@ -37,10 +37,14 @@ double DecimalFactorial( double z)
  {
   retVal *= y + zf;
  }
-
-
+ 
  retVal = retVal*z;
-	    
+
+ if(std::signbit(static_cast<double>(retVal)) == true)
+ {
+  retVal = 0.0;	
+ }
+
  return retVal;
 }
 
@@ -51,9 +55,9 @@ bool check(double value)
 }
 
 
-int IntegerFactorial(int Value)
+double IntegerFactorial(double Value)
 {
- int factorial = 1;
+ double factorial = 1.0;
     
  if(Value < 0)
  {
@@ -67,13 +71,16 @@ int IntegerFactorial(int Value)
   }
  }
 
+ if(std::signbit(static_cast<double>(factorial)) == true)
+ {
+  retVal = 0.0;	//set to 0.0 if the precision exeeding double range and turns to a negative factorial
+ }	
  return factorial;	
 }
 
 
 int main()
 {
- int z;
  double num,gamma;
  
  cout<<"Enter the number to calculate: ";
@@ -84,8 +91,7 @@ int main()
  {
   //double-value is as well an integer, <.00> is given
     
-  z = static_cast<int>(num);
-  gamma = IntegerFactorial(z);
+  gamma = IntegerFactorial(num);
   cout<<"\nThe Factorial of the Integer is: "<<gamma<<endl;
  }
  else
