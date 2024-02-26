@@ -42,7 +42,7 @@ double DecimalFactorial( double z)
 
  if(std::signbit(static_cast<double>(retVal)) == true)
  {
-  retVal = 0.0;	
+  retVal = 0.0;	//set to 0.0 if the precision exeeding double range and turns to a negative factorial
  }
 
  return retVal;
@@ -73,7 +73,7 @@ double IntegerFactorial(double Value)
 
  if(std::signbit(static_cast<double>(factorial)) == true)
  {
-  retVal = 0.0;	//set to 0.0 if the precision exeeding double range and turns to a negative factorial
+  factorial = 0.0;	//set to 0.0 if the precision exeeding double range and turns to a negative factorial
  }	
  return factorial;	
 }
@@ -90,7 +90,8 @@ int main()
  if(check(num) == true)
  {
   //double-value is as well an integer, <.00> is given
-    
+  //we get Results 0.0 - Exeeding Range, inf Infinity, nan NotaNumber
+  
   gamma = IntegerFactorial(num);
   cout<<"\nThe Factorial of the Integer is: "<<gamma<<endl;
  }
