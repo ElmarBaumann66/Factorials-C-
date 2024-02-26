@@ -93,12 +93,12 @@ int main()
   //we get Results 0.0 - Exeeding Range, inf Infinity, nan NotaNumber
   
   gamma = IntegerFactorial(num);
-  cout<<"\nThe Factorial of the Integer is: "<<gamma<<endl;
+  cout<<"\nThe Factorial of "<<num<<" is: "<<gamma<<endl;
  }
  else
  {
   gamma=DecimalFactorial(num);
-  cout<<"\nThe Gamma-Factorial of the Decimal is: "<<gamma<<endl;
+  cout<<"\nThe Gamma-Factorial of "<<num<<" is: "<<gamma<<endl;
  }
 
  
