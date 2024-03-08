@@ -8,13 +8,17 @@
 
 #include<iostream>
 #include<cmath>
+#include <iomanip>
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::setprecision;
+using std::tgamma;
 
 double DecimalFactorial( double z)
 {
+ /* // Skipped old Code . . . 
  double g = 0.5772156649;  // Euler-Mascheroni constant
  double zi = floor(z);     // integer part of z
  double zf = z - zi;       // fractional part of z
@@ -36,9 +40,9 @@ double DecimalFactorial( double z)
  for(double y = 0.0; y < zi - 0.5; ++y)
  {
   retVal *= y + zf;
- }
+ } */
  
- retVal = retVal*z;
+ retVal = tgamma(z+1);
 
  if(std::signbit(static_cast<double>(retVal)) == true)
  {
